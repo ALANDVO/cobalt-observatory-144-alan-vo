@@ -1,0 +1,17 @@
+[package]
+name = "openshell-otel"
+version = "0.1.0"
+edition = "2021"
+description = "OpenTelemetry integration for OpenShell"
+license = "Apache-2.0"
+
+[dependencies]
+tracing = { workspace = true }
+tracing-opentelemetry = { workspace = true, optional = true }
+opentelemetry = { workspace = true, optional = true }
+opentelemetry-semantic-conventions = { workspace = true, optional = true }
+openshell-ocsf = { path = "../openshell-ocsf" }
+
+[features]
+default = []
+otel = ["tracing-opentelemetry", "opentelemetry", "opentelemetry-semantic-conventions"]

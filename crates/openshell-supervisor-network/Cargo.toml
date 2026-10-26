@@ -1,0 +1,11 @@
+[package]
+name = "openshell-supervisor-network"
+version = "0.1.0"
+edition = "2021"
+description = "Network supervision for OpenShell"
+license = "Apache-2.0"
+
+[dependencies]
+tracing = { workspace = true }
+openshell-ocsf = { path = "../openshell-ocsf" }
+openshell-otel = { path = "../openshell-otel", features = ["otel"] }

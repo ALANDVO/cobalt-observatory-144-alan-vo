@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schema.ocsf.io/1.8.0/objects/trace.json",
+  "title": "Trace",
+  "description": "The Trace object contains information about the distributed trace that produced this event.",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The W3C trace ID as a 32-character lowercase hexadecimal string.",
+      "pattern": "^[0-9a-f]{32}$",
+      "examples": ["0af7651916cd43dd8448eb211c80319c"]
+    },
+    "span": {
+      "$ref": "span.json"
+    }
+  },
+  "required": ["uid"],
+  "additionalProperties": false
+}
