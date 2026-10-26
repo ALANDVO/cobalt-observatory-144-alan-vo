@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schema.ocsf.io/1.8.0/objects/span.json",
+  "title": "Span",
+  "description": "The Span object contains information about a span within a distributed trace.",
+  "type": "object",
+  "properties": {
+    "span_id": {
+      "type": "string",
+      "description": "The W3C span ID as a 16-character lowercase hexadecimal string.",
+      "pattern": "^[0-9a-f]{16}$",
+      "examples": ["1234567890abcdef"]
+    },
+    "start_time": {
+      "type": "integer",
+      "description": "The span start time as Unix timestamp in milliseconds."
+    },
+    "end_time": {
+      "type": "integer",
+      "description": "The span end time as Unix timestamp in milliseconds."
+    }
+  },
+  "required": ["span_id", "start_time", "end_time"],
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/openshell-ocsf",
+    "crates/openshell-otel",
+    "crates/openshell-supervisor-network",
+]
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-opentelemetry = "0.27"
+opentelemetry = "0.26"
+opentelemetry-semantic-conventions = "0.26"

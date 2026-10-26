@@ -1,2 +1,6 @@
-# cobalt-observatory-144-alan-vo
-Alan Vo | OpenShell is the safe, private runtime for autonomous AI agents.
+# cobalt-observatory-144-alan-vo — Alan Vo
+
+> Work in progress. This checkpoint may be incomplete or fail tests. See PLAN.md and STATUS.md before use.
+
+
+Maintainer: Alan Vo <alanvo@gmail.com>
