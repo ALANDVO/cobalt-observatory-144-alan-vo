@@ -10,7 +10,7 @@ ocsf-trace-correlation
 
 ### ocsf-trace-correlation — Add trace_id/span_id correlation fields to OCSF event builders
 
-Status: in_progress
+Status: done
 
 Acceptance:
 - OCSF events emitted inside a sampled OTel span include trace.uid (32 lowercase hex characters) and list trace in metadata.profiles

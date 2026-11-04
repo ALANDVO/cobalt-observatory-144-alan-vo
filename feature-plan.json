@@ -5,7 +5,7 @@
     {
       "id": "ocsf-trace-correlation",
       "title": "Add trace_id/span_id correlation fields to OCSF event builders",
-      "status": "in_progress",
+      "status": "done",
       "acceptance": [
         "OCSF events emitted inside a sampled OTel span include trace.uid (32 lowercase hex characters) and list trace in metadata.profiles",
         "OCSF events emitted without an active sampled span omit the trace object and do not list the profile",
