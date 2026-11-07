@@ -30,4 +30,6 @@ Partial code published for continued development. Known issues: STATUS.md.
 - Downgrade: preserves trace for 1.8, strips for 1.3/1.1, preserves other profiles
 - Deny span: reason display, policy name, destination, span emission
 
+---
 
+Alan Vo · [alanvo.net](https://alanvo.net)

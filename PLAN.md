@@ -22,3 +22,6 @@ Implementation: `crates/openshell-ocsf/src/trace.rs`, `crates/openshell-ocsf/src
 
 Tests: `crates/openshell-ocsf/tests/trace_correlation.rs`, `crates/openshell-ocsf/tests/downgrade_trace.rs`, `crates/openshell-ocsf/tests/schema_validation.rs`, `crates/openshell-otel/src/trace_context.rs`, `crates/openshell-supervisor-network/src/deny_span.rs`
 
+---
+
+Alan Vo · [alanvo.net](https://alanvo.net)
