@@ -18,7 +18,7 @@ impl TraceContext {
         Self { uid }
     }
 
-    /// Validate that the UID is a valid W3C trace ID (32 lowercase hex chars).
+/// Validate that the UID is a valid W3C trace ID (32 lowercase hex chars).
     /// Digits 0-9 are allowed (they are neither upper nor lower case).
     pub fn is_valid(&self) -> bool {
         self.uid.len() == 32 && self.uid.chars().all(|c| c.is_ascii_hexdigit() && !c.is_ascii_uppercase())

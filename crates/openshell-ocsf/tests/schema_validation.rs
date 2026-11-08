@@ -147,16 +147,13 @@ fn test_event_with_multiple_profiles_including_trace_validates() {
     let builder = NetworkActivityBuilder::new().with_metadata(metadata).trace_context(trace);
     let event_json = serde_json::to_value(&builder).unwrap();
 
-    let trace_profile_schema = load_schema("profile.json");
-    
-    let mut validation_instance = serde_json::json!({});
-    if let Some(metadata) = event_json.get("metadata") {
-        validation_instance["metadata"] = metadata.clone();
-    }
-    if let Some(trace_obj) = event_json.get("trace") {
-        validation_instance["trace"] = trace_obj.clone();
-    }
+    // Validate the trace object against the trace schema
+    let trace_schema = load_schema("trace.json");
+    let trace_obj = event_json.get("trace").expect("trace object missing");
+    let result = validate(&trace_schema, trace_obj);
+    assert!(result.is_ok(), "Trace object validation failed: {:?}", result.err());
 
-    let result = validate(&trace_profile_schema, &validation_instance);
-    assert!(result.is_ok(), "Validation failed with multiple profiles: {:?}", result.err());
+    // Verify trace profile is in metadata.profiles
+    let profiles = event_json["metadata"]["profiles"].as_array().unwrap();
+    assert!(profiles.iter().any(|p| p == "trace"), "trace profile missing from metadata.profiles");
 }
