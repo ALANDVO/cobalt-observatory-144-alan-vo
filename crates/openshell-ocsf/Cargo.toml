@@ -13,4 +13,5 @@ tracing = { workspace = true }
 
 [dev-dependencies]
 serde_json = { workspace = true }
+opentelemetry-semantic-conventions = { version = "0.26", optional = true }
 jsonschema = { workspace = true }
