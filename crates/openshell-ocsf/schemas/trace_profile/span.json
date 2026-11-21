@@ -1,9 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schema.ocsf.io/1.8.0/objects/span.json",
-  "title": "Span",
-  "description": "The Span object contains information about a span within a distributed trace.",
   "type": "object",
+  "description": "The Span object contains information about a span within a distributed trace.",
   "properties": {
     "span_id": {
       "type": "string",

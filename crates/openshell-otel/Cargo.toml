@@ -9,9 +9,8 @@ license = "Apache-2.0"
 tracing = { workspace = true }
 tracing-opentelemetry = { workspace = true, optional = true }
 opentelemetry = { workspace = true, optional = true }
-opentelemetry-semantic-conventions = { workspace = true, optional = true }
 openshell-ocsf = { path = "../openshell-ocsf" }
 
 [features]
 default = []
-otel = ["tracing-opentelemetry", "opentelemetry", "opentelemetry-semantic-conventions"]
+otel = ["tracing-opentelemetry", "opentelemetry"]

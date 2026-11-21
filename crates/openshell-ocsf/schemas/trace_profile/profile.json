@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schema.ocsf.io/1.8.0/profiles/trace.json",
+  "$id": "trace-profile-local",
   "title": "Trace Profile",
   "description": "The Trace profile adds trace correlation to OCSF events.",
   "type": "object",
