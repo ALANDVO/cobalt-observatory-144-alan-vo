@@ -116,6 +116,19 @@ fn test_clear_trace_removes_profile() {
 }
 
 #[test]
+fn test_profiles_are_deterministic_sorted() {
+    use openshell_ocsf::builders::Metadata;
+    let mut metadata = Metadata::with_profiles(&["host", "container", "trace", "network_proxy"]);
+    metadata.add_profile("security_control");
+    let builder = NetworkActivityBuilder::new().with_metadata(metadata);
+    let json = serde_json::to_value(&builder).unwrap();
+    let profiles = json["metadata"]["profiles"].as_array().unwrap();
+    let names: Vec<&str> = profiles.iter().map(|p| p.as_str().unwrap()).collect();
+    // BTreeSet yields a stable, sorted order regardless of insertion order.
+    assert_eq!(names, vec!["container", "host", "network_proxy", "security_control", "trace"]);
+}
+
+#[test]
 fn test_trace_uid_format_32_lowercase_hex() {
     let trace = TraceContext::new("0af7651916cd43dd8448eb211c80319c".to_string());
     assert!(trace.is_valid());

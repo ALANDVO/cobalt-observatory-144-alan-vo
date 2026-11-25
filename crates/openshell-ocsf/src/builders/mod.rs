@@ -1,13 +1,13 @@
 use crate::trace::TraceContext;
 use serde::{Deserialize, Serialize};
-use std::collections::HashSet;
+use std::collections::BTreeSet;
 
 /// Metadata for OCSF events including profiles.
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub struct Metadata {
-    #[serde(skip_serializing_if = "HashSet::is_empty")]
-    pub profiles: HashSet<String>,
+    #[serde(skip_serializing_if = "BTreeSet::is_empty")]
+    pub profiles: BTreeSet<String>,
 }
 
 impl Metadata {
@@ -16,7 +16,7 @@ impl Metadata {
     }
 
     pub fn with_profiles(profiles: &[&str]) -> Self {
-        let mut set = HashSet::new();
+        let mut set = BTreeSet::new();
         for p in profiles {
             set.insert(p.to_string());
         }
